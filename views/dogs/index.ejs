@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Who let the dogs out?</title>
+  </head>
+  <body>
+    <h1>Who let the dogs out?</h1>
+
+    <a href="/dogs/new">New Dog</a>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (const id in dogs) { %>
+          <tr>
+            <td>
+              <a href="/dogs/<%= id %>">
+                <%= dogs[id].name %>
+              </a>
+            </td>
+            <td>
+              <a href="/dogs/<%= id %>/edit">
+                Edit
+              </a>
+            </td>
+            <td>
+              <form method="POST" action="/dogs/<%= id %>/delete">
+                <input type="submit" value="Delete" />
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+
+  </body>
+</html>

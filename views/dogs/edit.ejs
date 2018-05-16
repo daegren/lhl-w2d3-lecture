@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Who let the dogs out?</title>
+  </head>
+  <body>
+    <h1>Who let the dogs out?</h1>
+
+    <a href="/dogs">Back</a>
+    <h2>Edit Dog</h2>
+
+    <form method="POST" action="/dogs/<%= id %>">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" value="<%= dog.name %>" />
+
+      <input type="submit" value="Save Dog" />
+    </form>
+  </body>
+</html>
